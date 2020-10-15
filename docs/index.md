@@ -51,6 +51,6 @@ Visit the doex [documentation][documentation].
 
 ## References
 
-- Adapted from [https://github.com/pawanaichra/doex](https://github.com/pawanaichra/doex).
+- Adapted from [https://github.com/pawanaichra/doe](https://github.com/pawanaichra/doe).
 
 [documentation]: https://doex.readthedocs.io/
