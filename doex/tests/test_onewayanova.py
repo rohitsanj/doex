@@ -1,11 +1,11 @@
 import pytest
 import numpy.testing as npt
-import doex
+from ..onewayanova import OneWayANOVA
 
 
 @pytest.fixture
 def exp():
-    return doex.OneWayANOVA(
+    return OneWayANOVA(
         [24, 28, 37, 30],
         [37, 44, 31, 35],
         [42, 47, 52, 38],
