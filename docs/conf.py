@@ -94,12 +94,12 @@ todo_include_todos = False
 # documentation.
 #
 
-html_theme_options = {
-    "path_to_docs": "docs",
-    "repository_url": "https://github.com/rohitsanj/doex",
-    "repository_branch": "master",
-    "use_edit_page_button": True,
-}
+# html_theme_options = {
+#     "path_to_docs": "docs",
+#     "repository_url": "https://github.com/rohitsanj/doex",
+#     "repository_branch": "master",
+#     "use_edit_page_button": True,
+# }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
