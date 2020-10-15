@@ -50,14 +50,14 @@ class OneWayANOVA:
 
         rows = [
             [
-                "Between treatment groups",
+                "Treatments",
                 self.dof_treatment,
                 self.ss_treatment,
                 self.mss_treatment,
                 self.f,
                 self.p,
             ],
-            ["Within groups (error)", self.dof_error, self.ss_error, self.mss_error, "", ""],
+            ["Error", self.dof_error, self.ss_error, self.mss_error, "", ""],
             ["Total", self.dof_total, self.ss_total, "", "", ""],
         ]
 

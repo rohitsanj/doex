@@ -1,6 +1,8 @@
+import math
+
 import pytest
-import numpy.testing as npt
-from ..onewayanova import OneWayANOVA
+
+from ..one_way_anova import OneWayANOVA
 
 
 @pytest.fixture
@@ -14,8 +16,8 @@ def exp():
 
 class TestOneWayANOVA:
     def test_onewayanova(self, exp):
-        npt.assert_almost_equal(exp.f, 7.0356, decimal=3)
-        npt.assert_almost_equal(exp.p, 0.0145, decimal=3)
+        assert math.isclose(exp.f, 7.0356, abs_tol=10 ** -3)
+        assert math.isclose(exp.p, 0.0145, abs_tol=10 ** -3)
 
     def test_onewayanova_display(self, exp):
         exp.display()
