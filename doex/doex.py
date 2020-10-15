@@ -1,24 +1,15 @@
 import numpy as np
 import scipy.stats
-from tabulate import tabulate
+from prettytable import PrettyTable
 
-__all__ = ["F_1_way_anova"]
+__all__ = ["OneWayANOVA"]
 
 
-class F_1_way_anova:
+class OneWayANOVA:
     def __init__(self, *entries):
         self.entries = entries
-        self.ss_treatment = None
-        self.ss_error = None
-        self.ss_total = None
-        self.dof_treatment = None
-        self.dof_total = None
-        self.dof_error = None
-        self.mss_treatment = None
-        self.f = None
-        self.p = None
+        self.float_format = ".4"
 
-    def run(self):
         all_entries = np.array([])
         for entry in self.entries:
             all_entries = np.concatenate((all_entries, entry))
@@ -45,11 +36,29 @@ class F_1_way_anova:
         self.p = 1 - scipy.stats.f.cdf(self.f, self.dof_treatment, self.dof_error)
 
     def display(self):
-        table = [
+        table = PrettyTable()
+        table.float_format["Sum of Squares"] = self.float_format
+        table.float_format["Mean Sum of Squares"] = self.float_format
+        table.float_format["F statistic"] = self.float_format
+        table.float_format["p value"] = self.float_format
+
+        table.field_names = [
+            "Source of Variation",
+            "DOF",
+            "Sum of Squares",
+            "Mean Sum of Squares",
+            "F statistic",
+            "p value"
+        ]
+
+        rows = [
             ["Between treatment groups", self.dof_treatment,
                 self.ss_treatment, self.mss_treatment, self.f, self.p],
             ["Within groups (error)", self.dof_error, self.ss_error, self.mss_error, "", ""],
             ["Total", self.dof_total, self.ss_total, "", "", ""]
         ]
-        print(tabulate(table, headers=["Source of Variation", "DOF", "Sum of Squares",
-                                       "Mean Sum of Squares", "F statistic", "p-value"]))
+
+        for row in rows:
+            table.add_row(row)
+
+        print(table)
