@@ -21,11 +21,11 @@ here = os.path.abspath(local_path)
 
 
 def version():
-    with open(here + '/doe/_version.py', 'r') as ver:
+    with open(here + '/doex/_version.py', 'r') as ver:
         for line in ver.readlines():
             if line.startswith('version ='):
                 return line.split(' = ')[-1].strip()[1:-1]
-    raise ValueError('No version found in doe/version.py')
+    raise ValueError('No version found in doex/version.py')
 
 
 def read(fname):
@@ -45,7 +45,7 @@ doc_reqs = read_reqs(os.path.join(os.path.dirname(__file__), 'docs/requirements-
 extras_require = {"test": dev_reqs, "dev": dev_reqs, "sphinx": doc_reqs}
 
 setup(
-    name='doe',
+    name='doex',
     version=version(),
     description='Python library for conducting design of experiments',
     author='Rohit Sanjay',
@@ -54,15 +54,15 @@ setup(
     keywords='design-of-experiments probability statistics',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/rohitsanj/doe',
-    packages=['doe'],
+    url='https://github.com/rohitsanj/doex',
+    packages=['doex'],
     python_requires='>=3.5',
     install_requires=requirements,
     extras_require=extras_require,
     project_urls={
-        'Documentation': 'https://doe.readthedocs.io',
-        'Source': 'https://github.com/rohitsanj/doe/',
-        'Tracker': 'https://github.com/rohitsanj/doe/issues',
+        'Documentation': 'https://doex.readthedocs.io',
+        'Source': 'https://github.com/rohitsanj/doex/',
+        'Tracker': 'https://github.com/rohitsanj/doex/issues',
     },
     classifiers=[
         'Intended Audience :: Developers',

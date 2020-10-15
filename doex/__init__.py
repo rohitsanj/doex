@@ -1,2 +1,2 @@
 from ._version import version as __version__
-from .doe import *
+from .doex import *

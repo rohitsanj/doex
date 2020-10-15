@@ -1,6 +1,6 @@
-# So You Want to Contribute to doe!
+# So You Want to Contribute to doex!
 
-We welcome all contributions to doe both large and small. We encourage you to join our community.
+We welcome all contributions to doex both large and small. We encourage you to join our community.
 
 ## Our Community Values
 
@@ -16,13 +16,13 @@ Please read our entire code of conduct [here](https://github.com/rohitsanj/rohit
 
 Following these instructions should give you an efficient path to opening your first pull-request.
 
-### Cloning the doe Repository
+### Cloning the doex Repository
 
 Fork the repository to your local Github account. Clone this repository to your local development machine.
 
 ```bash
-git clone https://github.com/<your_account>/doe
-cd doe
+git clone https://github.com/<your_account>/doex
+cd doex
 ```
 
 ### Install an Editable Version
@@ -34,7 +34,7 @@ python3 -m venv dev
 source dev/bin/activate
 ```
 
-Install doe using:
+Install doex using:
 
 ```bash
 pip install -e '.[dev]'
@@ -70,7 +70,7 @@ Alternavitely pytest can be used if you have an environment already setup which 
 pytest
 ```
 
-Now there should be a working and editable installation of doe to start making your own contributions.
+Now there should be a working and editable installation of doex to start making your own contributions.
 
 ### Building Documentation
 
@@ -130,9 +130,9 @@ There are good references to the [Git documentation](https://git-scm.com/doc) an
 _Note: You might want to set a reference to the main repository to fetch/merge from there instead of your forked repository. You can do that using:_
 
 ```bash
-git remote add upstream https://github.com/rohitsanj/doe
+git remote add upstream https://github.com/rohitsanj/doex
 ```
 
 It's possible you will have conflicts between your repository and master. Here, `master` is meant to be synchronized with the `upstream` repository. GitHub has some good [documentation](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/) on merging pull requests from the command line.
 
-Happy hacking on doe!
+Happy hacking on doex!
