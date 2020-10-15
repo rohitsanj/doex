@@ -65,7 +65,7 @@ exp = doex.LatinSquare(
 ```py
 import doex
 
-exp = RandomizedCompleteBlockDesign(
+exp = doex.RandomizedCompleteBlockDesign(
     [
         [73, 68, 74, 71, 67],
         [73, 67, 75, 72, 70],
