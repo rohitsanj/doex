@@ -2,8 +2,6 @@ import numpy as np
 import scipy.stats
 from prettytable import PrettyTable
 
-__all__ = ["OneWayANOVA"]
-
 
 class OneWayANOVA:
     def __init__(self, *entries):
