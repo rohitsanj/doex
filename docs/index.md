@@ -1,3 +1,12 @@
+[![Build Status](https://github.com/rohitsanj/doex/workflows/CI/badge.svg)](https://github.com/rohitsanj/doex/actions)
+[![image](https://codecov.io/github/rohitsanj/doex/coverage.svg?branch=master)](https://codecov.io/github/rohitsanj/doex?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/doex/badge/?version=latest)](https://doex.readthedocs.io/en/latest/?badge=latest)
+[![PyPI](https://img.shields.io/pypi/v/doex.svg)](https://pypi.org/project/doex/)
+[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+
 # doex - Design of Experiments
 
 Python library for conducting design of experiments
