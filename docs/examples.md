@@ -1,8 +1,8 @@
 # Examples
 
-## 1. One-Way ANOVA
+## One-Way ANOVA
 
-```python
+```py
 import doex
 
 exp = doex.OneWayANOVA(
@@ -16,15 +16,16 @@ exp = doex.OneWayANOVA(
 +---------------------+-----+----------------+---------------------+-------------+---------+
 | Source of Variation | DOF | Sum of Squares | Mean Sum of Squares | F statistic | p value |
 +---------------------+-----+----------------+---------------------+-------------+---------+
-|      Treatments     |  2  |    450.6667    |       225.3333      |    7.0356   |  0.0145 |
-|        Error        |  9  |    288.2500    |       32.0278       |             |         |
-|        Total        |  11 |    738.9167    |                     |             |         |
+| Treatments | 2 | 450.6667 | 225.3333 | 7.0356 | 0.0145 |
+| Error | 9 | 288.2500 | 32.0278 | | |
+| Total | 11 | 738.9167 | | | |
 +---------------------+-----+----------------+---------------------+-------------+---------+
+
 ```
 
-## 2. Latin Square Design
+## Latin Square Design
 
-```python
+```py
 import doex
 
 exp = doex.LatinSquare(

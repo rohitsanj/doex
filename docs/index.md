@@ -44,7 +44,6 @@ exp = doex.OneWayANOVA(
 ```{toctree}
 :maxdepth: 2
 
-
 examples.md
 ```
 
