@@ -2,6 +2,12 @@
 
 Python library for conducting design of experiments
 
+## Installation
+
+```bash
+pip install doex
+```
+
 ## Sample usage
 
 ```python
@@ -25,12 +31,6 @@ Output of above snippet:
 |  Within groups (error)   |  9  |    288.2500    |       32.0278       |             |         |
 |          Total           |  11 |    738.9167    |                     |             |         |
 +--------------------------+-----+----------------+---------------------+-------------+---------+
-```
-
-## Installation
-
-```bash
-pip install doex
 ```
 
 ## Documentation

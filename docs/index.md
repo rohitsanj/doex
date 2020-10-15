@@ -2,17 +2,28 @@
 
 Python library for conducting design of experiments
 
+## Installation
+
+```bash
+pip install doex
+```
+
 ## Sample usage
 
 ```python
 import doex
 
->>> exp = doex.OneWayANOVA(
+exp = doex.OneWayANOVA(
     [24, 28, 37, 30], # Treatment 1
     [37, 44, 31, 35], # Treatment 2
     [42, 47, 52, 38], # Treatment 3
 )
->>> exp.display()
+exp.display()
+```
+
+Output of above snippet:
+
+```
 +--------------------------+-----+----------------+---------------------+-------------+---------+
 |   Source of Variation    | DOF | Sum of Squares | Mean Sum of Squares | F statistic | p value |
 +--------------------------+-----+----------------+---------------------+-------------+---------+
@@ -20,12 +31,6 @@ import doex
 |  Within groups (error)   |  9  |    288.2500    |       32.0278       |             |         |
 |          Total           |  11 |    738.9167    |                     |             |         |
 +--------------------------+-----+----------------+---------------------+-------------+---------+
-```
-
-## Installation
-
-```bash
-pip install doex
 ```
 
 ## Documentation
