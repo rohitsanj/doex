@@ -8,18 +8,19 @@ class LatinSquare:
         self.treatments = list()
         self.treatments_order = np.array(treatments_order)
         self.treatments_values = np.array(treatments_values)
-        self.combined_data = np.dstack((self.treatments_order, self.treatments_values))
 
         if self.treatments_order.shape != self.treatments_values.shape:
             raise ValueError("treatments_order and treatments_values must have same shape")
 
+        self._validate_treatments_order()
+
+        self.combined_data = np.dstack((self.treatments_order, self.treatments_values))
         n_rows, n_cols = self.treatments_values.shape
 
         N = 0
         for entry in self.treatments_values:
             N += len(entry)
 
-        self._validate_treatments_order()
         self.treatments_data = self._create_treatments_data()
 
         self.correction_factor = np.square(np.sum(self.treatments_values)) / N

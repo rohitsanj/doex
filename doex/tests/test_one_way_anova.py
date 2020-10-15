@@ -12,5 +12,5 @@ class TestOneWayANOVA:
         )
 
         abs_tol = 10 ** -3
-        assert math.isclose(exp.f, 7.0356, abs_tol)
-        assert math.isclose(exp.p, 0.0145, abs_tol)
+        assert math.isclose(exp.f, 7.0356, abs_tol=abs_tol)
+        assert math.isclose(exp.p, 0.0145, abs_tol=abs_tol)
