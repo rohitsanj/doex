@@ -27,10 +27,7 @@ exp = doex.OneWayANOVA(
     [37, 44, 31, 35], # Treatment 2
     [42, 47, 52, 38], # Treatment 3
 )
-exp.display()
 ```
-
-Output of above snippet:
 
 ```
 +---------------------+-----+----------------+---------------------+-------------+---------+
@@ -48,15 +45,15 @@ Visit the doex [documentation][documentation].
 
 ## Implementations
 
-- [x] One-way ANOVA
-- [ ] Two-way ANOVA
-- [ ] Completely Randomized Design
-- [ ] Randomized Complete Block Design
-- [ ] Randomized Complete Block Design with missing values
-- [ ] Latin Square Design
-- [ ] Graeco-Latin Square Design
-- [ ] Balanced Incomplete Block Design
-- [ ] Factorial Designs
+- One-Way ANOVA
+- Latin Square Design
+- Two-way ANOVA (TODO)
+- Completely Randomized Design (TODO)
+- Randomized Complete Block Design (TODO)
+- Randomized Complete Block Design with missing values (TODO)
+- Graeco-Latin Square Design (TODO)
+- Balanced Incomplete Block Design (TODO)
+- Factorial Designs (TODO)
 
 ## References
 
