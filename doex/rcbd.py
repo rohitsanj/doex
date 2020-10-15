@@ -6,7 +6,7 @@ from .utils import p_value, create_anova_table
 class RandomizedCompleteBlockDesign:
     def __init__(self, data):
         self.data = np.array(data)
-        print(self.data.shape)
+
         n_treatments, n_blocks = self.data.shape
 
         N = 0
