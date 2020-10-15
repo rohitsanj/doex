@@ -21,6 +21,7 @@ class TestLatinSquare:
                 [4, 2, 3, 8, 8],
             ],
         )
+
         abs_tol = 10 ** -3
         assert math.isclose(exp.f_treatments, 11.3092, abs_tol=abs_tol)
         assert math.isclose(exp.f_rows, 1.2345, abs_tol=abs_tol)
