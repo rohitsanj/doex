@@ -47,9 +47,8 @@ Visit the doex [documentation][documentation].
 
 - One-Way ANOVA
 - Latin Square Design
-- Two-way ANOVA (TODO)
+- Randomized Complete Block Design
 - Completely Randomized Design (TODO)
-- Randomized Complete Block Design (TODO)
 - Randomized Complete Block Design with missing values (TODO)
 - Graeco-Latin Square Design (TODO)
 - Balanced Incomplete Block Design (TODO)
