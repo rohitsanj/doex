@@ -1,12 +1,11 @@
 import numpy as np
-import scipy.stats
-from prettytable import PrettyTable
+
+from .utils import p_value, create_anova_table
 
 
 class OneWayANOVA:
     def __init__(self, *entries):
         self.entries = entries
-        self.float_format = ".4"
 
         all_entries = np.array([])
         for entry in self.entries:
@@ -30,23 +29,14 @@ class OneWayANOVA:
         self.mss_error = self.ss_error / self.dof_error
 
         self.f = self.mss_treatment / self.mss_error
-        self.p = 1 - scipy.stats.f.cdf(self.f, self.dof_treatment, self.dof_error)
+        self.p = p_value(self.f, self.dof_treatment, self.dof_error)
 
-    def display(self):
-        self.table = PrettyTable()
-        self.table.float_format["Sum of Squares"] = self.float_format
-        self.table.float_format["Mean Sum of Squares"] = self.float_format
-        self.table.float_format["F statistic"] = self.float_format
-        self.table.float_format["p value"] = self.float_format
+        # Display table
+        self.table = self._create_table()
+        print(self.table)
 
-        self.table.field_names = [
-            "Source of Variation",
-            "DOF",
-            "Sum of Squares",
-            "Mean Sum of Squares",
-            "F statistic",
-            "p value",
-        ]
+    def _create_table(self):
+        table = create_anova_table()
 
         rows = [
             [
@@ -62,6 +52,6 @@ class OneWayANOVA:
         ]
 
         for row in rows:
-            self.table.add_row(row)
+            table.add_row(row)
 
-        print(self.table)
+        return table
