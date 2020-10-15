@@ -45,9 +45,9 @@ Visit the doex [documentation][documentation].
 
 ## Implementations
 
-- One-Way ANOVA
-- Latin Square Design
-- Randomized Complete Block Design
+- [One-Way ANOVA](https://doex.readthedocs.io/en/latest/examples.html#one-way-anova)
+- [Latin Square Design](https://doex.readthedocs.io/en/latest/examples.html#latin-square-design)
+- [Randomized Complete Block Design](https://doex.readthedocs.io/en/latest/examples.html#randomized-complete-block-design)
 - Completely Randomized Design (TODO)
 - Randomized Complete Block Design with missing values (TODO)
 - Graeco-Latin Square Design (TODO)
