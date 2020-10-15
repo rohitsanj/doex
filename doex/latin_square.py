@@ -43,8 +43,8 @@ class LatinSquare:
         self.ss_error = self.ss_total - (self.ss_rows + self.ss_columns + self.ss_treatments)
 
         # Calculate Degrees of Freedom
-        self.dof_rows = n_cols - 1
-        self.dof_columns = n_rows - 1
+        self.dof_rows = n_rows - 1
+        self.dof_columns = n_cols - 1
         self.dof_treatments = len(self.treatments) - 1
         self.dof_total = N - 1
         self.dof_error = self.dof_total - (self.dof_rows + self.dof_columns + self.dof_treatments)
