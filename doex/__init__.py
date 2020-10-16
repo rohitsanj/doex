@@ -1,4 +1,4 @@
 from ._version import version as __version__
-from .one_way_anova import OneWayANOVA
+from .crd import CompletelyRandomizedDesign, OneWayANOVA
+from .rcbd import RandomizedCompleteBlockDesign, TwoWayANOVA
 from .latin_square import LatinSquare
-from .rcbd import RandomizedCompleteBlockDesign

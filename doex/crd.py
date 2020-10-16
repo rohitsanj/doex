@@ -3,7 +3,7 @@ import numpy as np
 from .utils import p_value, create_anova_table
 
 
-class OneWayANOVA:
+class CompletelyRandomizedDesign:
     def __init__(self, *entries):
         self.entries = entries
 
@@ -55,3 +55,7 @@ class OneWayANOVA:
             table.add_row(row)
 
         return table
+
+
+# Single factor CRD is equivalent to One-Way ANOVA
+OneWayANOVA = CompletelyRandomizedDesign

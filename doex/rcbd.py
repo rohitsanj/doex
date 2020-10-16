@@ -77,3 +77,6 @@ class RandomizedCompleteBlockDesign:
             table.add_row(row)
 
         return table
+
+
+TwoWayANOVA = RandomizedCompleteBlockDesign
