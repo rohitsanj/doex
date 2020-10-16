@@ -7,9 +7,9 @@
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-# doex - Design of Experiments
+# doex - Design and Analysis of Experiments
 
-Python library for conducting design of experiments
+Python library for conducting design of experiments.
 
 ## Installation
 
@@ -54,7 +54,7 @@ Visit the doex [documentation][documentation].
 - Balanced Incomplete Block Design (TODO)
 - Factorial Designs (TODO)
 
-## References
+## Acknowledgements
 
 - Adapted from [https://github.com/pawanaichra/doe](https://github.com/pawanaichra/doe).
 

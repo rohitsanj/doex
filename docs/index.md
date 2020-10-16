@@ -7,9 +7,9 @@
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-# doex - Design of Experiments
+# doex - Design and Analysis of Experiments
 
-Python library for conducting design of experiments
+Python library for conducting design of experiments.
 
 ## Installation
 
@@ -39,14 +39,6 @@ exp = doex.OneWayANOVA(
 +---------------------+-----+----------------+---------------------+-------------+---------+
 ```
 
-## Examples
-
-```{toctree}
-:maxdepth: 2
-
-examples.md
-```
-
 ## Implementations
 
 - [One-Way ANOVA](https://doex.readthedocs.io/en/latest/examples.html#one-way-anova)
@@ -58,7 +50,17 @@ examples.md
 - Balanced Incomplete Block Design (TODO)
 - Factorial Designs (TODO)
 
-## References
+## Documentation
+
+```{toctree}
+:maxdepth: 3
+
+examples.md
+reference.md
+contributing.md
+```
+
+## Acknowledgements
 
 - Adapted from [https://github.com/pawanaichra/doe](https://github.com/pawanaichra/doe).
 
