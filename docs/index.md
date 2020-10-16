@@ -57,6 +57,7 @@ exp = doex.OneWayANOVA(
 examples.md
 reference.md
 contributing.md
+changelog.md
 ```
 
 ## Acknowledgements
