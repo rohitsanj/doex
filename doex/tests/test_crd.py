@@ -1,11 +1,11 @@
 import math
 
-from ..one_way_anova import OneWayANOVA
+from ..crd import CompletelyRandomizedDesign
 
 
-class TestOneWayANOVA:
-    def test_onewayanova(self):
-        exp = OneWayANOVA(
+class TestCompletelyRandomizedDesign:
+    def test_completely_randomized_design(self):
+        exp = CompletelyRandomizedDesign(
             [24, 28, 37, 30],
             [37, 44, 31, 35],
             [42, 47, 52, 38],
