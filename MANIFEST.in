@@ -4,6 +4,7 @@ recursive-include doex *.json
 recursive-include doex *.yaml
 recursive-include doex *.keep
 recursive-include doex *.txt
+recursive-include notebooks *.ipynb
 
 include setup.py
 include requirements*.txt
@@ -28,3 +29,4 @@ prune binder
 prune .tox
 # Build files
 prune azure-pipelines.yml
+prune notebooks/.ipynb_checkpoints
