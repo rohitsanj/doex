@@ -1,6 +1,6 @@
 [![Build Status](https://github.com/rohitsanj/doex/workflows/CI/badge.svg)](https://github.com/rohitsanj/doex/actions)
 [![image](https://codecov.io/github/rohitsanj/doex/coverage.svg?branch=master)](https://codecov.io/github/rohitsanj/doex?branch=master)
-[![Documentation Status](https://readthedocs.org/projects/doex/badge/?version=latest)](https://doex.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/doex/badge/?version=latest)](https://doex.rohitsanjay.com/en/latest/?badge=latest)
 [![PyPI](https://img.shields.io/pypi/v/doex.svg)](https://pypi.org/project/doex/)
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
@@ -54,6 +54,10 @@ exp = doex.OneWayANOVA(
 - Balanced Incomplete Block Design (TODO)
 - Factorial Designs (TODO)
 
+## Source Code
+
+- [GitHub](https://github.com/rohitsanj/doex)
+
 ## Documentation
 
 ```{toctree}
@@ -69,4 +73,4 @@ changelog.md
 
 - Adapted from [https://github.com/pawanaichra/doe](https://github.com/pawanaichra/doe).
 
-[documentation]: https://doex.readthedocs.io/
+[documentation]: https://doex.rohitsanjay.com/

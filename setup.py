@@ -60,7 +60,7 @@ setup(
     install_requires=requirements,
     extras_require=extras_require,
     project_urls={
-        'Documentation': 'https://doex.readthedocs.io',
+        'Documentation': 'https://doex.rohitsanjay.com',
         'Source': 'https://github.com/rohitsanj/doex/',
         'Tracker': 'https://github.com/rohitsanj/doex/issues',
     },
