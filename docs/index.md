@@ -54,10 +54,6 @@ exp = doex.OneWayANOVA(
 - Balanced Incomplete Block Design (TODO)
 - Factorial Designs (TODO)
 
-## Source Code
-
-- [GitHub](https://github.com/rohitsanj/doex)
-
 ## Documentation
 
 ```{toctree}
@@ -67,6 +63,7 @@ examples.md
 reference.md
 contributing.md
 changelog.md
+GitHub Repository <https://github.com/rohitsanj/doex>
 ```
 
 ## Acknowledgements
