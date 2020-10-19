@@ -49,8 +49,8 @@ exp = doex.OneWayANOVA(
 - [Completely Randomized Design / One-Way ANOVA](examples.html#completely-randomized-design)
 - [Randomized Complete Block Design / Two-Way ANOVA](examples.html#randomized-complete-block-design)
 - [Latin Square Design](examples.html#latin-square-design)
+- [Graeco-Latin Square Design](examples.html#graeco-latin-square-design)
 - Randomized Complete Block Design with missing values (TODO)
-- Graeco-Latin Square Design (TODO)
 - Balanced Incomplete Block Design (TODO)
 - Factorial Designs (TODO)
 
