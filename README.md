@@ -54,7 +54,7 @@ Visit the doex [documentation][documentation].
 - [Randomized Complete Block Design / Two-Way ANOVA](https://doex.rohitsanjay.com/en/latest/examples.html#randomized-complete-block-design)
 - [Latin Square Design](https://doex.rohitsanjay.com/en/latest/examples.html#latin-square-design)
 - [Graeco-Latin Square Design](https://doex.rohitsanjay.com/en/latest/examples.html#graeco-latin-square-design)
-- Randomized Complete Block Design with missing values (TODO)
+- [Randomized Complete Block Design with missing values](https://doex.rohitsanjay.com/en/latest/examples.html#randomized-complete-block-design-with-missing-values)
 - Balanced Incomplete Block Design (TODO)
 - Factorial Designs (TODO)
 
