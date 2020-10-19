@@ -1,3 +1,5 @@
+import pytest
+
 from ..covariance import covariance, covariance_matrix
 
 
@@ -27,6 +29,11 @@ def test_covariance():
     ]
 
     covariance(X, Y)
+
+
+def test_covariance_raises_error():
+    with pytest.raises(ValueError):
+        covariance([1, 2, 3], [1, 2, 3, 5])
 
 
 def test_covariance_1():
