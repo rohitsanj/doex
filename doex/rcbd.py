@@ -88,11 +88,11 @@ class RandomizedCompleteBlockDesign_MissingValues(RandomizedCompleteBlockDesign)
 
         n_treatments, n_blocks = self.data.shape
 
+        num_missing = np.count_nonzero(np.isnan(self.data))
         missing_locations = np.argwhere(np.isnan(self.data))
         adjusted_values = self.handle_missing(self.data, missing_locations)
 
         self.data[missing_locations] = adjusted_values
-        num_missing = np.count_nonzero(np.isnan(self.data))
         print("Data after adjusting for {} missing value(s)".format(num_missing))
         print(self.data)
 

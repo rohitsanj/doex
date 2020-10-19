@@ -109,6 +109,45 @@ exp = doex.TwoWayANOVA(
 )
 ```
 
+## Randomized Complete Block Design With Missing Values
+
+Missing values are indicated with `float("nan")`.
+
+### Example 1 - RCBD One Value Missing
+
+```python
+import doex
+
+exp = doex.RandomizedCompleteBlockDesign_MissingValues(
+    [
+        [18.5, 11.7, 15.4, 16.5],
+        [15.7, float("nan"), 16.6, 18.6],
+        [16.2, 12.9, 15.5, 12.7],
+        [14.1, 14.4, 20.3, 15.7],
+        [13.0, 16.9, 18.4, 16.5],
+        [13.6, 12.5, 41.5, 18.0],
+    ]
+)
+```
+
+```
+Data after adjusting for 1 missing value(s)
+[[18.5  11.7  15.4  16.5 ]
+ [12.92 12.92 12.92 12.92]
+ [16.2  12.9  15.5  12.7 ]
+ [14.1  14.4  20.3  15.7 ]
+ [13.   16.9  18.4  16.5 ]
+ [13.6  12.5  41.5  18.  ]]
++---------------------+-----+----------------+---------------------+-------------+---------+
+| Source of Variation | DOF | Sum of Squares | Mean Sum of Squares | F statistic | p value |
++---------------------+-----+----------------+---------------------+-------------+---------+
+|      Treatments     |  5  |    166.7697    |       33.3539       |    1.1086   |  0.3967 |
+|        Blocks       |  3  |    178.6946    |       59.5649       |    1.9798   |  0.1603 |
+|        Error        |  15 |    451.2879    |       30.0859       |             |         |
+|        Total        |  23 |    796.7522    |                     |             |         |
++---------------------+-----+----------------+---------------------+-------------+---------+
+```
+
 ## Latin Square Design
 
 ```py
@@ -149,7 +188,7 @@ exp = doex.LatinSquare(
 ```py
 import doex
 
-exp = GraecoLatinSquare(
+exp = doex.GraecoLatinSquare(
     latin=[
         ["A", "B", "C", "D", "E"],
         ["B", "C", "D", "E", "A"],
