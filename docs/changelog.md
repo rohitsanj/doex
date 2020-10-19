@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+
+- Added implementation of `GraecoLatinSquare`
+
 ## 0.0.3
 
 - Changed docs url from doex.readthedocs.io to doex.rohitsanjay.com
