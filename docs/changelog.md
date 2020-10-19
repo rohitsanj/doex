@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+
+- Added implementation of RCBD with one missing value
+
 ## 0.0.4
 
 - Added implementation of `GraecoLatinSquare`
