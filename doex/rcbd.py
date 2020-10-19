@@ -80,3 +80,41 @@ class RandomizedCompleteBlockDesign:
 
 
 TwoWayANOVA = RandomizedCompleteBlockDesign
+
+
+class RandomizedCompleteBlockDesign_MissingValues(RandomizedCompleteBlockDesign):
+    def __init__(self, data):
+        self.data = np.array(data)
+
+        n_treatments, n_blocks = self.data.shape
+
+        missing_locations = np.argwhere(np.isnan(self.data))
+        adjusted_values = self.handle_missing(self.data, missing_locations)
+
+        self.data[missing_locations] = adjusted_values
+        num_missing = np.count_nonzero(np.isnan(self.data))
+        print("Data after adjusting for {} missing value(s)".format(num_missing))
+        print(self.data)
+
+        # Continue with RCBD analysis
+        super().__init__(self.data)
+
+    def handle_missing(self, data, locations):
+        if len(locations) == 1:
+            return self._missing_1_value(data, locations[0])
+        elif len(locations) == 2:
+            raise NotImplementedError("Two values missing has not been implemented yet.")
+        else:
+            raise Exception("Data must have either 1 or 2 missing values")
+
+    def _missing_1_value(self, data, location):
+        num_rows, num_columns = data.shape
+        row, column = location
+
+        total_sum = np.nansum(data)
+        row_sum = np.nansum(data[row, :])
+        column_sum = np.nansum(data[:, column])
+
+        return (num_columns * column_sum + num_rows * row_sum - total_sum) / (
+            (num_columns - 1) * (num_rows - 1)
+        )
