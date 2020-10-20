@@ -116,9 +116,6 @@ class LatinSquare:
                 T = np.nansum(data)
                 break
 
-        if T is None:
-            raise ValueError("Error occurred while trying to fetch treatment data")
-
         S = np.nansum(self.treatments_values)
 
         self.treatments_values[i, j] = (v * (R + C + T) - 2 * S) / ((v - 1) * (v - 2))
