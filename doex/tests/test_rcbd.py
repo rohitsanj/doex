@@ -51,7 +51,7 @@ class TestRCBDMissing:
         assert math.isclose(exp.f_treatments, 0.8102, abs_tol=abs_tol)
         assert math.isclose(exp.f_blocks, 2.2349, abs_tol=abs_tol)
 
-    def test_rcbd_missing_2_throw_error(self):
+    def test_rcbd_missing_2(self):
         exp = RandomizedCompleteBlockDesign_MissingValues(
             [[12, 14, 12], [10, float("nan"), 8], [float("nan"), 15, 10]]
         )
