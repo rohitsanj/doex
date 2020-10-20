@@ -111,7 +111,7 @@ exp = doex.TwoWayANOVA(
 
 ## Randomized Complete Block Design With Missing Values
 
-Missing values are indicated with `float("nan")`.
+Missing values must be indicated with `float("nan")`.
 
 ### Example 1 - RCBD One Value Missing
 
@@ -215,6 +215,8 @@ exp = doex.LatinSquare(
 ```
 
 ### Example 2 - LSD With Missing Value
+
+Missing values must be indicated with `float("nan")`.
 
 ```py
 import doex
