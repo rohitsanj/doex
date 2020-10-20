@@ -87,3 +87,21 @@ class TestLatinSquare:
         assert math.isclose(exp.f_treatments, 15.0143, abs_tol=abs_tol)
         assert math.isclose(exp.f_rows, 2.5857, abs_tol=abs_tol)
         assert math.isclose(exp.f_columns, 1.3714, abs_tol=abs_tol)
+
+    def test_latin_square_multiple_comparisons(self):
+        exp = LatinSquare(
+            [
+                ["C", "D", "B", "A"],
+                ["A", "B", "D", "C"],
+                ["D", "C", "A", "B"],
+                ["B", "A", "C", "D"],
+            ],
+            [
+                [235, 236, 218, 268],
+                [251, 241, 227, 229],
+                [234, 273, 274, 226],
+                [195, 270, 230, 225],
+            ],
+        )
+
+        exp.multiple_comparisons()

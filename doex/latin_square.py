@@ -1,10 +1,15 @@
 import numpy as np
 
-from .utils import p_value, create_anova_table
+from .utils import (
+    p_value,
+    create_anova_table,
+    multiple_comparisons,
+)
 
 
 class LatinSquare:
-    def __init__(self, treatments_order, treatments_values):
+    def __init__(self, treatments_order, treatments_values, alpha=0.05):
+        self.alpha = alpha
         self.treatments = list()
         self.treatments_order = np.array(treatments_order)
         self.treatments_values = np.array(treatments_values)
@@ -79,6 +84,14 @@ class LatinSquare:
         # Display results
         self.table = self._create_table()
         print(self.table)
+
+    def multiple_comparisons(self):
+        # Display multiple comparisons result
+        print(
+            multiple_comparisons(
+                self.treatments, self.treatments_data, self.dof_error, np.sqrt(self.mss_error)
+            )
+        )
 
     def _validate_treatments_order(self):
         for row in self.treatments_order:
