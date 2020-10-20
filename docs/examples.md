@@ -152,7 +152,8 @@ Data after adjusting for 1 missing value(s)
 
 ```python
 import doex
-exp = RandomizedCompleteBlockDesign_MissingValues(
+
+exp = doex.RandomizedCompleteBlockDesign_MissingValues(
     [
         [90.3, 89.2, 98.2, 93.9, 87.4, 97.9],
         [92.5, 89.5, 90.6, float("nan"), 87, 95.8],
