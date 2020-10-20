@@ -49,7 +49,7 @@ def create_multi_comparisons_table():
 
 def multiple_comparisons(treatments, treatments_data, error_dof, sigma_error, alpha=0.05):
     treatment_map = {t: d for t, d in zip(treatments, treatments_data)}
-    treatment_means = {t: np.average(d) for t, d in treatment_map.items()}
+    treatment_means = {t: (np.average(d), len(d)) for t, d in treatment_map.items()}
 
     k = len(treatment_means)
 
@@ -59,7 +59,9 @@ def multiple_comparisons(treatments, treatments_data, error_dof, sigma_error, al
 
     t_values = {}
     for pair in comparisons_list:
-        t = get_t_value(treatment_means[pair[0]], treatment_means[pair[1]], sigma_error, k, k)
+        value1, degree1 = treatment_means[pair[0]]
+        value2, degree2 = treatment_means[pair[1]]
+        t = get_t_value(value1, value2, sigma_error, degree1, degree2)
         t_values[pair] = (t, "Significant" if abs(t) > q_crit else "Not Significant")
 
     table = create_multi_comparisons_table()

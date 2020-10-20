@@ -1,6 +1,6 @@
 import numpy as np
 
-from .utils import p_value, create_anova_table
+from .utils import p_value, create_anova_table, multiple_comparisons
 
 
 class CompletelyRandomizedDesign:
@@ -34,6 +34,17 @@ class CompletelyRandomizedDesign:
         # Display table
         self.table = self._create_table()
         print(self.table)
+
+    def multiple_comparisons(self):
+        # Display multiple comparisons result
+        print(
+            multiple_comparisons(
+                list(range(1, len(self.entries) + 1)),
+                self.entries,
+                self.dof_error,
+                np.sqrt(self.mss_error),
+            )
+        )
 
     def _create_table(self):
         table = create_anova_table()

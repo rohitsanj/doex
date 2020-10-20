@@ -103,3 +103,5 @@ class TestLatinSquare:
                 [195, 270, 230, 225],
             ],
         )
+
+        exp.multiple_comparisons()

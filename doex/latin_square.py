@@ -85,6 +85,7 @@ class LatinSquare:
         self.table = self._create_table()
         print(self.table)
 
+    def multiple_comparisons(self):
         # Display multiple comparisons result
         print(
             multiple_comparisons(
