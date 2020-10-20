@@ -84,6 +84,6 @@ class TestLatinSquare:
         )
 
         abs_tol = 10 ** -3
-        assert math.isclose(exp.f_treatments, 15.0143, abs_tol=abs_tol)
-        assert math.isclose(exp.f_rows, 2.5857, abs_tol=abs_tol)
-        assert math.isclose(exp.f_columns, 1.3714, abs_tol=abs_tol)
+        assert math.isclose(exp.f_treatments, 12.5119, abs_tol=abs_tol)
+        assert math.isclose(exp.f_rows, 2.1548, abs_tol=abs_tol)
+        assert math.isclose(exp.f_columns, 1.1429, abs_tol=abs_tol)
