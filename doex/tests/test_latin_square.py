@@ -71,3 +71,14 @@ class TestLatinSquare:
                     [4, 2, 3, 8, 8],
                 ],
             )
+
+    def test_latin_square_missing_1(self):
+        LatinSquare(
+            [
+                ["A", "C", "B", "D"],
+                ["C", "B", "D", "A"],
+                ["B", "D", "A", "C"],
+                ["D", "A", "C", "B"],
+            ],
+            [[12, 19, 10, 8], [18, 12, 6, float("nan")], [22, 10, 5, 21], [12, 7, 27, 17]],
+        )
