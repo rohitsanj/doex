@@ -86,3 +86,15 @@ class TestRCBDMissing:
                     [13.6, float("nan"), 41.5, 18.0],
                 ]
             )
+
+    def test_rcbd_multiple_comparisons(self):
+        exp = RandomizedCompleteBlockDesign(
+            [
+                [9.3, 9.4, 9.6, 10.0],
+                [9.4, 9.3, 9.8, 9.9],
+                [9.2, 9.4, 9.5, 9.7],
+                [9.7, 9.6, 10.0, 10.2],
+            ]
+        )
+
+        exp.multiple_comparisons()
