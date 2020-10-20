@@ -90,9 +90,8 @@ class RandomizedCompleteBlockDesign_MissingValues(RandomizedCompleteBlockDesign)
 
         num_missing = np.count_nonzero(np.isnan(self.data))
         missing_locations = np.argwhere(np.isnan(self.data))
-        adjusted_values = self.handle_missing(self.data, missing_locations)
+        self.handle_missing(self.data, missing_locations)
 
-        self.data[missing_locations] = adjusted_values
         print("Data after adjusting for {} missing value(s)".format(num_missing))
         print(self.data)
 
@@ -103,18 +102,40 @@ class RandomizedCompleteBlockDesign_MissingValues(RandomizedCompleteBlockDesign)
         if len(locations) == 1:
             return self._missing_1_value(data, locations[0])
         elif len(locations) == 2:
-            raise NotImplementedError("Two values missing has not been implemented yet.")
+            return self._missing_2_values(data, locations)
         else:
             raise Exception("Data must have either 1 or 2 missing values")
 
     def _missing_1_value(self, data, location):
-        num_rows, num_columns = data.shape
-        row, column = location
+        k, r = data.shape  # k treatments, r replications
+        i, j = location
 
-        total_sum = np.nansum(data)
-        row_sum = np.nansum(data[row, :])
-        column_sum = np.nansum(data[:, column])
+        G = np.nansum(data)
+        treatments_sum = np.nansum(data[i, :])
+        blocks_sum = np.nansum(data[:, j])
 
-        return (num_columns * column_sum + num_rows * row_sum - total_sum) / (
-            (num_columns - 1) * (num_rows - 1)
+        self.data[i, j] = (r * blocks_sum + k * treatments_sum - G) / ((r - 1) * (k - 1))
+
+    def _missing_2_values(self, data, locations):
+        k, r = data.shape  # k treatments, r replications
+
+        y1_loc, y2_loc = locations
+        i, j = y1_loc
+        m, j_1 = y2_loc
+
+        G = np.nansum(data)
+        Ti = np.nansum(data[i, :])
+        Tm = np.nansum(data[m, :])
+        Bj = np.nansum(data[:, j])
+        Bj_1 = np.nansum(data[:, j_1])
+
+        y1_estimate = ((k - 1) * (r - 1) * (k * Ti + r * Bj - G) - (k * Tm + r * Bj_1 - G)) / (
+            np.square(r - 1) * np.square(k - 1) - 1
         )
+
+        y2_estimate = ((k - 1) * (r - 1) * (k * Tm + r * Bj_1 - G) - (k * Ti + r * Bj - G)) / (
+            np.square(r - 1) * np.square(k - 1) - 1
+        )
+
+        self.data[y1_loc[0], y1_loc[1]] = y1_estimate
+        self.data[y2_loc[0], y2_loc[1]] = y2_estimate

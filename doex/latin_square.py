@@ -14,14 +14,27 @@ class LatinSquare:
 
         self._validate_treatments_order()
 
+        # Check for missing values and handle if present
+        num_missing = np.count_nonzero(np.isnan(self.treatments_values))
+        if num_missing == 1:
+            loc = np.argwhere(np.isnan(self.treatments_values))[0]
+            self._handle_1_missing(loc)
+            print(
+                "Treatment values after handling 1 missing value at ({}, {}):".format(
+                    loc[0], loc[1]
+                )
+            )
+            print(self.treatments_values)
+        elif num_missing > 1:
+            raise NotImplementedError("Can only handle 1 missing value")
+
         self.combined_data = np.dstack((self.treatments_order, self.treatments_values))
         n_rows, n_cols = self.treatments_values.shape
+        self.treatments_data = self._create_treatments_data(self.combined_data)
 
         N = 0
         for entry in self.treatments_values:
             N += len(entry)
-
-        self.treatments_data = self._create_treatments_data()
 
         self.correction_factor = np.square(np.sum(self.treatments_values)) / N
 
@@ -74,17 +87,38 @@ class LatinSquare:
         if len(self.treatments) != len(self.treatments_order[0]):
             raise ValueError("Symbols in treatments_order are not same across all rows")
 
-    def _create_treatments_data(self):
+    def _create_treatments_data(self, combined_data):
         treatments_data = []
         for treatment in self.treatments:
             temp = []
-            for row in self.combined_data:
+            for row in combined_data:
                 for data in row:
                     if treatment == data[0]:
                         temp.append(float(data[1]))
             treatments_data.append(temp)
 
         return treatments_data
+
+    def _handle_1_missing(self, location):
+        i, j = location
+        v = self.treatments_values.shape[0]
+
+        combined_data = np.dstack((self.treatments_order, self.treatments_values))
+        treatments_data = self._create_treatments_data(combined_data)
+
+        treatment = self.treatments_order[i, j]
+        R = np.nansum(self.treatments_values[i, :])
+        C = np.nansum(self.treatments_values[:, j])
+
+        T = None
+        for t, data in zip(self.treatments, treatments_data):
+            if treatment == t:
+                T = np.nansum(data)
+                break
+
+        S = np.nansum(self.treatments_values)
+
+        self.treatments_values[i, j] = (v * (R + C + T) - 2 * S) / ((v - 1) * (v - 2))
 
     def _create_table(self):
         table = create_anova_table()

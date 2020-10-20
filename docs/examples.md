@@ -111,7 +111,7 @@ exp = doex.TwoWayANOVA(
 
 ## Randomized Complete Block Design With Missing Values
 
-Missing values are indicated with `float("nan")`.
+Missing values must be indicated with `float("nan")`.
 
 ### Example 1 - RCBD One Value Missing
 
@@ -133,7 +133,7 @@ exp = doex.RandomizedCompleteBlockDesign_MissingValues(
 ```
 Data after adjusting for 1 missing value(s)
 [[18.5  11.7  15.4  16.5 ]
- [12.92 12.92 12.92 12.92]
+ [15.7  12.92 16.6  18.6 ]
  [16.2  12.9  15.5  12.7 ]
  [14.1  14.4  20.3  15.7 ]
  [13.   16.9  18.4  16.5 ]
@@ -141,14 +141,45 @@ Data after adjusting for 1 missing value(s)
 +---------------------+-----+----------------+---------------------+-------------+---------+
 | Source of Variation | DOF | Sum of Squares | Mean Sum of Squares | F statistic | p value |
 +---------------------+-----+----------------+---------------------+-------------+---------+
-|      Treatments     |  5  |    166.7697    |       33.3539       |    1.1086   |  0.3967 |
-|        Blocks       |  3  |    178.6946    |       59.5649       |    1.9798   |  0.1603 |
-|        Error        |  15 |    451.2879    |       30.0859       |             |         |
-|        Total        |  23 |    796.7522    |                     |             |         |
+|      Treatments     |  5  |    120.6883    |       24.1377       |    0.8102   |  0.5603 |
+|        Blocks       |  3  |    199.7598    |       66.5866       |    2.2349   |  0.1263 |
+|        Error        |  15 |    446.9110    |       29.7941       |             |         |
+|        Total        |  23 |    767.3591    |                     |             |         |
++---------------------+-----+----------------+---------------------+-------------+---------+
+```
+
+### Example 2 - RCBD Two Values Missing
+
+```python
+import doex
+
+exp = doex.RandomizedCompleteBlockDesign_MissingValues(
+    [
+        [[12, 14, 12],
+        [10, float("nan"), 8],
+        [float("nan"), 15, 10]]
+    ]
+)
+```
+
+```
+Data after adjusting for 2 missing value(s)
+[[12. 14. 12.]
+ [10. 12.  8.]
+ [12. 15. 10.]]
++---------------------+-----+----------------+---------------------+-------------+---------+
+| Source of Variation | DOF | Sum of Squares | Mean Sum of Squares | F statistic | p value |
++---------------------+-----+----------------+---------------------+-------------+---------+
+|      Treatments     |  2  |    12.6667     |        6.3333       |    9.5000   |  0.0302 |
+|        Blocks       |  2  |    20.6667     |       10.3333       |   15.5000   |  0.0131 |
+|        Error        |  4  |     2.6667     |        0.6667       |             |         |
+|        Total        |  8  |    36.0000     |                     |             |         |
 +---------------------+-----+----------------+---------------------+-------------+---------+
 ```
 
 ## Latin Square Design
+
+### Example 1 - LSD
 
 ```py
 import doex
@@ -180,6 +211,46 @@ exp = doex.LatinSquare(
 |       Columns       |  4  |    12.2400     |        3.0600       |    0.9787   |  0.4550 |
 |        Error        |  12 |    37.5200     |        3.1267       |             |         |
 |        Total        |  24 |    206.6400    |                     |             |         |
++---------------------+-----+----------------+---------------------+-------------+---------+
+```
+
+### Example 2 - LSD With Missing Value
+
+Missing values must be indicated with `float("nan")`.
+
+```py
+import doex
+
+exp = doex.LatinSquare(
+    [
+        ["A", "C", "B", "D"],
+        ["C", "B", "D", "A"],
+        ["B", "D", "A", "C"],
+        ["D", "A", "C", "B"],
+    ],
+    [
+        [12, 19, 10, 8],
+        [18, 12, 6, float("nan")],
+        [22, 10, 5, 21],
+        [12, 7, 27, 17],
+    ]
+)
+```
+
+```
+Treatment values after handling 1 missing value at (1, 3):
+[[12. 19. 10.  8.]
+ [18. 12.  6.  2.]
+ [22. 10.  5. 21.]
+ [12.  7. 27. 17.]]
++---------------------+-----+----------------+---------------------+-------------+---------+
+| Source of Variation | DOF | Sum of Squares | Mean Sum of Squares | F statistic | p value |
++---------------------+-----+----------------+---------------------+-------------+---------+
+|      Treatments     |  3  |    525.5000    |       175.1667      |   15.0143   |  0.0034 |
+|         Rows        |  3  |    90.5000     |       30.1667       |    2.5857   |  0.1486 |
+|       Columns       |  3  |    48.0000     |       16.0000       |    1.3714   |  0.3385 |
+|        Error        |  6  |    70.0000     |       11.6667       |             |         |
+|        Total        |  15 |    734.0000    |                     |             |         |
 +---------------------+-----+----------------+---------------------+-------------+---------+
 ```
 

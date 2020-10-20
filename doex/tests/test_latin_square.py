@@ -71,3 +71,19 @@ class TestLatinSquare:
                     [4, 2, 3, 8, 8],
                 ],
             )
+
+    def test_latin_square_missing_1(self):
+        exp = LatinSquare(
+            [
+                ["A", "C", "B", "D"],
+                ["C", "B", "D", "A"],
+                ["B", "D", "A", "C"],
+                ["D", "A", "C", "B"],
+            ],
+            [[12, 19, 10, 8], [18, 12, 6, float("nan")], [22, 10, 5, 21], [12, 7, 27, 17]],
+        )
+
+        abs_tol = 10 ** -3
+        assert math.isclose(exp.f_treatments, 15.0143, abs_tol=abs_tol)
+        assert math.isclose(exp.f_rows, 2.5857, abs_tol=abs_tol)
+        assert math.isclose(exp.f_columns, 1.3714, abs_tol=abs_tol)
