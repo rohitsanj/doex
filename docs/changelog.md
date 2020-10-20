@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.7
+
+- Added implementation of multiple comparisons for RCBD and LSD
+- Fixed bug in implementation of missing values - degree of freedom of error must be reduced by number of missing values
+
 ## 0.0.6
 
 - Added implementation of missing values for RCBD and LSD
