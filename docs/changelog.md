@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.6
+
+- Added implementation of missing values for RCBD and LSD
+- Previous release (0.0.5) containing implementation of RCBD one missing value is buggy. Please upgrade to later version.
+
 ## 0.0.5
 
 - Added implementation of RCBD with one missing value
