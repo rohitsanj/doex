@@ -65,7 +65,9 @@ class LatinSquare:
         self.dof_columns = n_cols - 1
         self.dof_treatments = len(self.treatments) - 1
         self.dof_total = N - 1
-        self.dof_error = self.dof_total - (self.dof_rows + self.dof_columns + self.dof_treatments)
+        self.dof_error = self.dof_total - (
+            self.dof_rows + self.dof_columns + self.dof_treatments + num_missing
+        )
 
         # Calculate Mean Sum of Squares
         self.mss_rows = self.ss_rows / self.dof_rows

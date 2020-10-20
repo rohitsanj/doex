@@ -48,16 +48,30 @@ class TestRCBDMissing:
             ]
         )
         abs_tol = 10 ** -3
-        assert math.isclose(exp.f_treatments, 0.8102, abs_tol=abs_tol)
-        assert math.isclose(exp.f_blocks, 2.2349, abs_tol=abs_tol)
+        assert math.isclose(exp.f_treatments, 0.7561, abs_tol=abs_tol)
+        assert math.isclose(exp.f_blocks, 2.0859, abs_tol=abs_tol)
 
     def test_rcbd_missing_2(self):
         exp = RandomizedCompleteBlockDesign_MissingValues(
             [[12, 14, 12], [10, float("nan"), 8], [float("nan"), 15, 10]]
         )
 
-        assert math.isclose(exp.f_treatments, 9.5, abs_tol=10 ** -3)
-        assert math.isclose(exp.f_blocks, 15.5, abs_tol=10 ** -3)
+        assert math.isclose(exp.f_treatments, 4.7500, abs_tol=10 ** -3)
+        assert math.isclose(exp.f_blocks, 7.7500, abs_tol=10 ** -3)
+
+    def test_rcbd_missing_3(self):
+        exp = RandomizedCompleteBlockDesign_MissingValues(
+            [
+                [90.3, 89.2, 98.2, 93.9, 87.4, 97.9],
+                [92.5, 89.5, 90.6, float("nan"), 87, 95.8],
+                [85.5, 90.8, 89.6, 86.2, 88, 93.4],
+                [82.5, 89.5, 85.6, 87.4, 78.9, 90.7],
+            ]
+        )
+
+        abs_tol = 10 ** -3
+        assert math.isclose(exp.f_treatments, 7.6241, abs_tol=abs_tol)
+        assert math.isclose(exp.f_blocks, 5.2181, abs_tol=abs_tol)
 
     def test_rcbd_missing_throw_error(self):
         with pytest.raises(Exception):

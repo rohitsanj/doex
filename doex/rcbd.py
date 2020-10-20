@@ -9,6 +9,11 @@ class RandomizedCompleteBlockDesign:
 
         n_treatments, n_blocks = self.data.shape
 
+        if hasattr(self, "num_missing"):
+            num_missing = self.num_missing
+        else:
+            num_missing = 0
+
         N = 0
         for entry in self.data:
             N += len(entry)
@@ -32,7 +37,7 @@ class RandomizedCompleteBlockDesign:
         self.dof_treatments = n_treatments - 1
         self.dof_blocks = n_blocks - 1
         self.dof_total = N - 1
-        self.dof_error = self.dof_total - (self.dof_treatments + self.dof_blocks)
+        self.dof_error = self.dof_total - (self.dof_treatments + self.dof_blocks + num_missing)
 
         # Calculate Mean Sum of Squares
         self.mss_treatments = self.ss_treatments / self.dof_treatments
@@ -101,11 +106,11 @@ class RandomizedCompleteBlockDesign_MissingValues(RandomizedCompleteBlockDesign)
 
         n_treatments, n_blocks = self.data.shape
 
-        num_missing = np.count_nonzero(np.isnan(self.data))
+        self.num_missing = np.count_nonzero(np.isnan(self.data))
         missing_locations = np.argwhere(np.isnan(self.data))
         self.handle_missing(self.data, missing_locations)
 
-        print("Data after adjusting for {} missing value(s)".format(num_missing))
+        print("Data after adjusting for {} missing value(s)".format(self.num_missing))
         print(self.data)
 
         # Continue with RCBD analysis
