@@ -1,4 +1,6 @@
 [![Build Status](https://github.com/rohitsanj/doex/workflows/CI/badge.svg)](https://github.com/rohitsanj/doex/actions)
+[![Downloads](https://pepy.tech/badge/doex)](https://pepy.tech/project/doex)
+[![Downloads](https://pepy.tech/badge/doex/week)](https://pepy.tech/project/doex)
 [![image](https://codecov.io/github/rohitsanj/doex/coverage.svg?branch=master)](https://codecov.io/github/rohitsanj/doex?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/doex/badge/?version=latest)](https://doex.rohitsanjay.com/en/latest/?badge=latest)
 [![PyPI](https://img.shields.io/pypi/v/doex.svg)](https://pypi.org/project/doex/)
